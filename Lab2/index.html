@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Lab2</title>   
+    </head>
+        <h1>Slider</h1>
+    <body>
+        <div id="slider">
+
+            <div class="slides fade"><img src="./JPG/1.jpg" alt="Photo1" class="sliderimg"></div>
+            <div class="slides fade"><img src="./JPG/2.jpg" alt="Photo2" class="sliderimg"></div>
+            <div class="slides fade"><img src="./JPG/3.jpg" alt="Photo3" class="sliderimg"></div>
+            <div class="slides fade"><img src="./JPG/4.jpg" alt="Photo4" class="sliderimg"></div>
+            <div class="slides fade"><img src="./JPG/5.jpg" alt="Photo5" class="sliderimg"></div>
+
+            <div id="first">
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+            </div>
+
+            <div id="second">
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+
+        <div style="text-align:center">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+        <main>
+        </main>
+
+        <script src="main.js" type="text/javascript"></script>
+    </body>
+</html>
