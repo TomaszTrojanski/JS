@@ -1,0 +1,105 @@
+.soundSources{
+    visibility: hidden;
+    height: 0;
+}
+
+.soundSchema{
+    display: flex;
+}
+
+.soundSchemaElement{
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+
+}
+
+.breakLine{
+    padding: 10px;
+    border-bottom-style: solid;
+
+}
+
+.buttonIsRecording{
+    font-size: 20px;
+    color: red;
+    border-radius: 18px;
+    background-color: yellow;
+    padding: 5px;
+}
+
+.buttonIsNotRecording{
+    font-size: 20px;
+    color: green;
+    border-radius: 18px;
+    background-color: gray;
+    padding: 5px;
+}
+
+.buttonIsRecording:after{
+    content: "Stop";
+    color: red;
+    font-size: 20px;
+}
+
+.buttonIsNotRecording:after{
+    content: 'Start';
+    color: green;
+    font-size: 20px;
+}
+
+.playSelectedButton{
+    font-size: 20px;
+    color: green;
+    border-radius: 18px;
+    background-color: gray;
+    padding: 5px;
+}
+
+/* Recording Section */
+
+#egzampleHiddenRecord{
+    visibility: hidden;
+    height: 0;
+}
+
+.recordsContainer{
+    margin: 20px;
+}
+
+.recordContainer{
+    margin-top: 10px;
+    background-color: blueviolet;
+    height: 60px;
+    border-radius: 25px;
+}
+
+.recordContainerButtonsContainer{
+    width: 100px;
+    height: 100%;
+    display: flex;
+}
+
+.deleteRecordButton{
+    background-color: red;
+    height: 100%;
+    width: 50%;
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+.deleteRecordButton:hover{
+    background-color: darkred;
+}
+
+.playRecordButton{
+    background-color: green;
+    height: 100%;
+    width: 50%;
+    margin-right: 10px;
+    
+}
+
+.playRecordButton:hover{
+    background-color: darkgreen;
+}
