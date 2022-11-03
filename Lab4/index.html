@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lab4</title>
+</head>
+<body>
+    <div class="headerContainer">
+        <h4 class="Title">NoteKeep</h4>
+        <div class="headerButtonsContainer">
+            <button class="headerButton" id="AddNoteHeaderButton"> Add Note </button>
+        </div>
+    </div>
+    <div class="contentContainer">
+        <div class="NotesContainer">
+            <div class="note" id="egzampleHiddenNote">
+                <h3 class="NoteTitle">Title</h3>
+                <p class="NoteDate">Date</p>
+                <p class="NoteContent">Lorem ipsum</p>
+            </div>
+            <h3>Pinned:</h3>
+            <div id="PinnedNotesContainer" class="NotesGrid breakLine">
+            </div>
+            <h3>Regular:</h3>
+            <div id="RegularNotesContainer" class="NotesGrid">
+            </div>
+        </div>
+        <!-- Visible when we want to add/edit/delete a note -->
+        <div class="DetailNoteBG">
+            <div class="DetailNoteContainer">
+                <div class="DetailNoteTitleAndColor">
+                    <input type="checkbox" id="DetailNotePinned">
+                    <input type="text" placeholder="Title:" id="DetailNoteTitle">
+                    <input type="color" id="colorpicker" value="black">
+                </div>
+                <div class="DetailNoteContent">
+                    <textarea  id="textContent" placeholder="Your note..."></textarea>
+                </div>
+                <div class="DetailNoteButtonsContainer">
+                    <button class="DetailNoteButton" id="DetailNoteCancelButton"> Cancel</button>
+                    <button class="DetailNoteButton" id="DetailNoteDeleteButton"> Delete </button>
+                    <button class="DetailNoteButton" id="DetailNoteSaveButton"> Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
