@@ -1,0 +1,23 @@
+body{
+    background-color:darksalmon;
+}
+#title{
+    display:block;
+    text-align: center;
+    color: hotpink;
+    background-color: turquoise;    
+}
+.bar{
+    padding: 15px;
+    border-bottom-style: solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.input_data{
+    margin-right: 40px;
+}
+.canvas{
+    margin: 10px;
+}
