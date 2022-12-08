@@ -1,14 +1,14 @@
 let numBalls = document.querySelector("#numBalls");
 let numBallsvalue 
+//window.alert("Sprawdzam czy na pewno działa!");
 
 function GetDist(){
   return Number(document.getElementById("dist").value);
 }
 
 let balls = [];
-
-let startBtn = document.getElementById("sBtn");
-let resetBtn = document.getElementById("rBtn");
+let sBtn = document.getElementById("sBtn");
+let rBtn = document.getElementById("rBtn");
 
 const createCanvas = document.createElement ("canvas")
 createCanvas.classList.add("canvas")
@@ -20,8 +20,8 @@ const body =  document.querySelector("body")
 body.appendChild(createCanvas)
 let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
-startBtn.addEventListener("click", start);
-resetBtn.addEventListener("click", reset);
+sBtn.addEventListener("click", start);
+rBtn.addEventListener("click", reset);
 
 function start() {
   numBallsvalue = numBalls.value
@@ -62,10 +62,7 @@ function Ball(x, y, radius) {
   this.vx = Math.random() * 3 - 1.5;
   this.vy = Math.random() * 3 - 1.5;
   
-  this.color = randomColor();
-  
   this.draw = function () {
-    ctx.fillStyle = this.color;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
     ctx.fill();
@@ -73,12 +70,25 @@ function Ball(x, y, radius) {
   this.move = function () {
     this.x += this.vx;
     this.y += this.vy;
-
-    if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-      this.vx = -this.vx;
-    }
     if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
       this.vy = -this.vy;
     }
+    if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+      this.vx = -this.vx;
+    }
   };
+}
+function distance(b1, b2) {
+    let xDist = b1.x - b2.x;
+    let yDist = b1.y - b2.y;
+    return Math.sqrt(xDist * xDist + yDist * yDist);
+}
+function connect(b1, b2) {
+    ctx.beginPath();
+    ctx.moveTo(b1.x, b1.y);
+    ctx.lineTo(b2.x, b2.y);
+    ctx.stroke();
+}
+function random(min, max) {
+   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
