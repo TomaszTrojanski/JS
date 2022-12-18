@@ -11,7 +11,6 @@ displayForecasts();
 addBtn.addEventListener('click',function(){
     createWeatherNote();
 });
-
 remove.addEventListener('click', removeAllForecasts);
 
 function getWeatherData(){
@@ -30,4 +29,13 @@ function getWeatherData(){
 		})
 		.then(() => displayForecast(weather))
 		.catch(err => console.log(err));
+}
+function getDataFromLocalStorage(){
+	forecasts = [];
+	if(localStorage.getItem(lsWeatherKey)==null || localStorage.getItem(lsWeatherKey)=='null') return;
+	const forecastsFromStorage = JSON.parse(localStorage.getItem(lsWeatherKey));
+	if(forecastsFromStorage.length==0) return;
+	for (let x = 0; x < forecastsFromStorage.length; x++) {
+		forecasts.push(forecastsFromStorage[x]);
+	}
 }
