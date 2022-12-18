@@ -39,3 +39,56 @@ function getDataFromLocalStorage(){
 		forecasts.push(forecastsFromStorage[x]);
 	}
 }
+function displayForecasts(){
+	for (let i = 0; i < forecasts.length; i++) {
+		displayForecast(forecasts[i]);
+	}
+}
+function displayForecast(weather){
+	const htmlWeather = document.createElement('div');
+	const htmlCity = document.createElement('h1');
+	const htmlTemp = document.createElement('p');
+	const htmlImg = document.createElement('div');
+	const htmlDesc = document.createElement('p');		
+ 	const htmlWind = document.createElement('p');
+ 	const htmlPressure = document.createElement('p');
+
+	htmlWeather.classList.add('weather-container');
+	htmlWeather.addEventListener('click', function(){
+		deleteWeather(htmlWeather,weather);
+	});
+	htmlCity.classList.add('city');
+	htmlImg.classList.add('weather-img');
+	htmlDesc.classList.add('desc');
+	htmlTemp.classList.add('temp');
+	htmlWind.classList.add('wind');
+	htmlPressure.classList.add('pressure');
+
+	htmlImg.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather.image}@2x.png"/>`;
+	htmlCity.innerHTML = weather.city;
+	htmlDesc.innerHTML = weather.desc;
+	htmlTemp.innerHTML = weather.temp + '°C';
+	htmlWind.innerHTML = 'WIND <br><br>' + weather.wind + ' m/s';
+	htmlPressure.innerHTML = 'PRESSURE <br><br>' + weather.pressure + ' hPa';
+	
+	main.appendChild(htmlWeather);
+	htmlWeather.appendChild(htmlCity);
+	htmlWeather.appendChild(htmlTemp);
+	htmlWeather.appendChild(htmlImg);
+	htmlWeather.appendChild(htmlDesc);
+	htmlWeather.appendChild(htmlWind);
+	htmlWeather.appendChild(htmlPressure);
+}
+function createWeatherNote() {
+	getWeatherData();
+	input.value = '';
+}
+function deleteWeather(htmlTag,weather){
+	htmlTag.remove();
+	forecasts.splice(weather,1);
+	localStorage.setItem(lsWeatherKey,JSON.stringify(forecasts));	
+}
+function removeAllForecasts(){
+	main.innerHTML = '';
+	localStorage.removeItem(lsWeatherKey);
+}
