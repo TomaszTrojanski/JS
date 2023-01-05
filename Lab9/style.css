@@ -1,0 +1,116 @@
+body{
+    background: lightskyblue;
+    font-family: Arial, sans-serif;;
+    font-size: 25px;
+}
+.main-container {
+    margin-top: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.add-weather{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display:flex;
+    justify-content: center;
+    color: white;
+}
+.add-weather h1{
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.add-weather input{
+    background-color: initial;
+    color: white;
+    font-size: 25px;
+    width: 350px;
+    height: 50px;
+    padding-left: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 30px;
+    border-radius: 10px;
+    border: 3px solid blue;
+    outline: none;
+    text-transform: uppercase;
+}
+input::placeholder{
+    font-size: 20px;
+    color: white;
+}
+.add-weather button{
+    border: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1em;
+    font-size: 25px;
+    height: 3em;
+    line-height: 25px;
+    outline: none;
+    border-radius: 25%;
+}
+.remove{
+    color: white;
+    background: transparent !important;
+}
+.remove:hover{
+    color: black;
+}
+.newWeather:hover{
+    color: white;
+    background-color: black;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.weather-container{
+    position: relative;
+    color: white;
+    width: 13em;
+    height: 13em;
+    margin: 30px;
+    padding: 20px 20px 20px 30px;
+    background-color: darkturquoise;
+    border-radius: 25px;
+}
+.city{
+    text-align: center;
+    margin-top: 0.75rem;
+}
+.weather-img{
+    float: right; 
+    transform: translateY(-40px);
+}
+.weather-img img{
+    object-fit: cover;
+    width: 130px;
+}
+.desc {
+    clear: both;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    transform: translateY(-120px);
+}
+.temp{
+    font-size: 60px;
+    transform: translateY(-65px);
+}
+.img, .temp{
+    display: inline-block;
+}
+.wind, .pressure{
+    padding-left: 30px;
+    text-align: center;
+    display: table-cell;
+    transform: translateY(-120px);
+    mix-blend-mode: overlay;
+}

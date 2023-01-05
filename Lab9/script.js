@@ -11,7 +11,7 @@ displayForecasts();
 addBtn.addEventListener('click',function(){
     createWeatherNote();
 });
-remove.addEventListener('click', removeAllForecasts);
+rBtn.addEventListener('click', removeAllForecasts);
 
 function getWeatherData(){
     let weather = {};
